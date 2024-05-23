@@ -1,0 +1,15 @@
+{% extends 'hematology/base.html' %}
+{% block content %}
+    <div class="record">
+        {% if record.published_date %}
+            <div class="date">
+                {{ record.published_date }}
+            </div>
+        {% endif %}
+    {% if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'record_edit' pk=record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    {% endif %}
+        <h1>{{ record.title }}</h1>
+        <p>{{ record.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

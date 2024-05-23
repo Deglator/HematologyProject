@@ -1,0 +1,9 @@
+{% extends 'hematology/base.html' %}
+
+{% block content %}
+    <h1>Запись</h1>
+    <form method="POST" class="record-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Сохранить</button>
+    </form>
+{% endblock %}
